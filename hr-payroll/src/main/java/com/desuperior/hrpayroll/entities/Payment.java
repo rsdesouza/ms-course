@@ -9,8 +9,11 @@ public class Payment implements Serializable {
 	private Double dailyIncome;
 	private Integer days;
 	
-	public Payment() {
-		
+	public Payment(String name, Double dailyIncome, Integer days) {
+		super();
+		this.name = name;
+		this.dailyIncome = dailyIncome;
+		this.days = days;
 	}
 
 	public String getName() {
@@ -36,16 +39,8 @@ public class Payment implements Serializable {
 	public void setDays(Integer days) {
 		this.days = days;
 	}
-
-	public Payment(String name, Double dailyIncome, Integer days) {
-		super();
-		this.name = name;
-		this.dailyIncome = dailyIncome;
-		this.days = days;
-	}
 	
 	public double getTotal() {
 		return days * dailyIncome;
 	}
-
 }
